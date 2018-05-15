@@ -17,7 +17,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/icons/favicon.ico"/>
     <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico"/>
 
-    {!! \App\Http\Helpers\HTML::style('layout') !!}
+    {!! HTML::style('layout') !!}
 </head>
 <body>
 

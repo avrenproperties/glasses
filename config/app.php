@@ -209,6 +209,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+		'HTML' => \App\Http\Helpers\HTML::class,
     ],
 
 ];
