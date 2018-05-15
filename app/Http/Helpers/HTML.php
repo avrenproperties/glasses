@@ -7,22 +7,22 @@ class HTML
 {
 	private const VERSION = '20180515';
 
-	private static function setVersion(&$file): void
+	private static function setVersion(&$file, $extension = ''): void
 	{
-		$file = $file . '?v=' . self::VERSION;
+		$file = $file . '.' . $extension .'?v=' . self::VERSION;
 	}
 
 	public static function style(string $file): string
 	{
-		self::setVersion($file);
+		self::setVersion($file, 'css');
 
-		return '<link rel="stylesheet" type="text/css" href="css/' . $file . '.css">';
+		return '<link rel="stylesheet" type="text/css" href="css/' . $file . '">';
 	}
 
 	public static function script(string $file): string
 	{
-		self::setVersion($file);
+		self::setVersion($file, 'js');
 
-		return '<script src="js/' . $file . '.js"></script>';
+		return '<script src="js/' . $file . '"></script>';
 	}
 }
