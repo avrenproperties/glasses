@@ -9,7 +9,7 @@ class HTML
 
 	private static function setVersion(&$file, $extension = ''): void
 	{
-		$file = $file . '.' . $extension .'?v=' . self::VERSION;
+		$file = $file . '.' . $extension . '?v=' . self::VERSION;
 	}
 
 	public static function style(string $file): string
