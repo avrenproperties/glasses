@@ -26,8 +26,8 @@
 					<a class="nav-link" href="#">Contact</a>
 				</li>
 
-				<li class="nav-item text-danger">
-					<a class="nav-link" href="#">Admin</a>
+				<li class="nav-item">
+					<a class="nav-link text-danger" href="#">Admin Panel</a>
 				</li>
 			</ul>
 		</div>
