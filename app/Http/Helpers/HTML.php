@@ -5,7 +5,7 @@ namespace App\Http\Helpers;
 
 class HTML
 {
-	private const VERSION = '20180515';
+	private const VERSION = '20180516';
 
 	private static function setVersion(&$file, $extension = ''): void
 	{

@@ -2,12 +2,13 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-
-    <link rel="stylesheet"
-          href="css/lib/bootstrap.css"
-          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-          crossorigin="anonymous">
+    <title>
+        @if (isset($title))
+            $title
+        @else
+            Glasses
+        @endif
+    </title>
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -17,17 +18,21 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/icons/favicon.ico"/>
     <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico"/>
 
-    {!! HTML::style('layout') !!}
+	{!! \App\Http\Helpers\HTML::style('lib/bootstrap') !!}
+    {!! \App\Http\Helpers\HTML::style('layout') !!}
 </head>
 <body>
 
-@yield('content')
+@include('templates.navigation')
+
+<div class="container">
+	@yield('content')
+</div>
+
+@include('templates.footer')
 
 <div id="scripts">
-    <script src="js/lib/jquery.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous">
-    </script>
+	{!! \App\Http\Helpers\HTML::script('lib/jquery') !!}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
             integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
@@ -38,6 +43,8 @@
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous">
     </script>
+
+	{!! \App\Http\Helpers\HTML::script('app') !!}
 </div>
 </body>
 </html>
