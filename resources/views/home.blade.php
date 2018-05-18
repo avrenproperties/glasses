@@ -1,5 +1,5 @@
 @extends('layout')
 
 @section('content')
-    home view (:
+	home view (:
 @stop
