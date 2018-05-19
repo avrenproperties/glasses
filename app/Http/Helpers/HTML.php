@@ -25,4 +25,12 @@ class HTML
 
 		return '<script src="js/' . $file . '"></script>';
 	}
+
+	public static function getRandomBanner()
+	{
+		$dir = 'images/banners';
+		$banners = glob($dir . '/*.*');
+
+		return $banners[array_rand($banners)];
+	}
 }
