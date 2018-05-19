@@ -6,7 +6,7 @@
 		@if (isset($title))
 			$title
 		@else
-			Glasses
+			{{ config('app.name', 'Laravel') }}
 		@endif
 	</title>
 
@@ -25,7 +25,11 @@
 
 @include('templates.navigation')
 
-<div class="container">
+<div class="container" id="content">
+	@if (!isset($banner) || !$banner)
+		@include('templates.banner', ['banner' => \App\Http\Helpers\HTML::getRandomBanner()])
+	@endif
+
 	@yield('content')
 </div>
 

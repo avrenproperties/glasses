@@ -29,4 +29,12 @@ class ForgotPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+	/**
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function showLoginForm()
+	{
+		return view('auth.passwords.email', ['banner' => false,]);
+	}
 }
